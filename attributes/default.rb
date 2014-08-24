@@ -13,3 +13,4 @@ default['umbraco']['app_root'] = "#{ENV['SYSTEMDRIVE']}\\inetpub\\apps\\umbraco"
 # Where to mount the app in IIS and what IIS pool to use
 default['umbraco']['app_path'] = '/cms'
 default['umbraco']['pool_name'] = 'umbraco'
+default['umbraco']['port'] = 80

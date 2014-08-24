@@ -59,7 +59,7 @@ end
 # Create an IIS site from the unzipped app path, rooted at /
 iis_site 'umbraco' do
   protocol :http
-  port 80
+  port node['umbraco']['port']
   path node['umbraco']['app_root']
   application_pool node['umbraco']['pool_name']
   action [:add,:start]
