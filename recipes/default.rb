@@ -66,7 +66,7 @@ iis_site 'umbraco' do
 end
 
 
-iis_config "-section:system.applicationHost/sites /+"[name='umbraco'].bindings.[protocol='http',bindingInformation='*:#{node['umbraco']['port']}:']" /commit:apphost" do
+iis_config "-section:system.applicationHost/sites /+\"[name='umbraco'].bindings.[protocol='http',bindingInformation='*:#{node['umbraco']['port']}:']\" /commit:apphost" do
     action :config
     notifies :restart, "service[iis]"
 end
