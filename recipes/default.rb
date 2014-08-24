@@ -65,7 +65,7 @@ iis_site 'umbraco' do
   action [:add,:start]
 end
 
-iis_config "set site /site.name:umbraco /+bindings.[protocol='http',bindingInformation='*:#{node['umbraco']['port']}:']" do
+iis_config "/site.name:umbraco /+bindings.[protocol='http',bindingInformation='*:#{node['umbraco']['port']}:']" do
     action :config
     notifies :restart, "service[iis]"
 end
