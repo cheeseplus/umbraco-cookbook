@@ -63,4 +63,5 @@ iis_site 'umbraco' do
   path node['umbraco']['app_root']
   application_pool node['umbraco']['pool_name']
   action [:add,:start]
+  notifies :restart, "service[iis]"
 end
