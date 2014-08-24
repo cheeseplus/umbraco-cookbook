@@ -63,5 +63,9 @@ iis_site 'umbraco' do
   path node['umbraco']['app_root']
   application_pool node['umbraco']['pool_name']
   action [:add,:start]
-  notifies :restart, "service[iis]"
+end
+
+iis_config "set site /site.name:umbraco /+bindings.[protocol='http',bindingInformation='*:#{node['umbraco']['port']}:']" do
+    action :config
+    notifies :restart, "service[iis]"
 end
