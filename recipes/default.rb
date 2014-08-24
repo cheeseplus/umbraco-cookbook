@@ -65,7 +65,7 @@ iis_site 'umbraco' do
   action [:add,:start]
 end
 
-iis_config "-section:system.applicationHost/sites /-\"[name='umbraco'].bindings" do
+iis_config "-section:system.applicationHost/sites /-\"[name='umbraco'].bindings\" /commit:apphost" do
     action :config
 end
 
